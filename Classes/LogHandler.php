@@ -64,7 +64,7 @@ final class LogHandler extends AbstractWriter
             '[%s] component="%s": %s %s',
             strtoupper($record->getLevel()),
             $record->getComponent(),
-            $this->interpolate($message, $context),
+            method_exists($this, 'interpolate') ? $this->interpolate($message, $context) : $message,
             $data
         );
 
