@@ -1,0 +1,26 @@
+{
+    "name": "bnf/log-to-console",
+    "description": "Log messages to console in TYPO3 console application",
+    "type": "typo3-cms-extension",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Benjamin Franzke",
+            "email": "benjaminfranzke@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.4.0 || ~8.0.0",
+        "typo3/cms-core": "^11.5 || 11.5.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bnf\\LogToConsole\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "log_to_console"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Bnf\LogToConsole\:
+    resource: '../Classes/*'
+
+  Bnf\LogToConsole\LogHandler:
+    public: true
+    arguments:
+      $options: []
+    tags:
+      - name: event.listener
+        method: 'onConsoleCommand'
+        event: Symfony\Component\Console\Event\ConsoleCommandEvent
+      - name: event.listener
+        method: 'onConsoleTerminate'
+        event: Symfony\Component\Console\Event\ConsoleTerminateEvent
